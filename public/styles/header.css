@@ -19,5 +19,6 @@ header {
   justify-content: center;
   align-items: center;
   flex-flow: column;
+  border: 4px solid;
 }
 
