@@ -45,6 +45,7 @@ $(document).ready(function() {
     }
     if ($tweet) {
       $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() });
+      loadtweets();
       return;
     }
 
@@ -58,5 +59,7 @@ $(document).ready(function() {
     .catch()
   }
   loadtweets();
+
+  
 
 })
