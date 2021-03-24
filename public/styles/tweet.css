@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: inherit;
+  width: 100%;
 }
 
 
@@ -37,6 +38,11 @@
   align-items: center;
   margin-bottom: 1em;
 
+}
+
+.tweet header img {
+  width: 20px;
+  margin-right: 0.5em;
 }
 
 .tweet div {
