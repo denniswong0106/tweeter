@@ -5,7 +5,6 @@
  */
 
 $(document).ready(function() {
-  // the meat goes here
 
   // createTweetElement function - takes in tweet object, returns tweet article
   // containing entire html structure of the tweet
@@ -36,7 +35,7 @@ $(document).ready(function() {
   ]
 
   const createTweetElement = function (tweetObj) {
-    console.log(tweetObj)
+
     const tweetHeader = `<header><span><span class="user-avatar"><img src=${tweetObj.user.avatars}></span>${tweetObj.user.name}</span><span id="handle" >${tweetObj.user.handle}</span></header>`;
     const tweetContent = `<div>${tweetObj.content.text}</div>`;
     const tweetFooter = `<footer> 
@@ -58,7 +57,12 @@ $(document).ready(function() {
     });
   }
 
-  renderTweets(data);  
+  renderTweets(data);
+
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+    $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() });
+  }); 
 
 
 })
