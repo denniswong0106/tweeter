@@ -9,31 +9,6 @@ $(document).ready(function() {
   // createTweetElement function - takes in tweet object, returns tweet article
   // containing entire html structure of the tweet
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giantsasdfffffffffffffff"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
   const createTweetElement = function (tweetObj) {
 
     const tweetHeader = `<header><span><span class="user-avatar"><img src=${tweetObj.user.avatars}></span>${tweetObj.user.name}</span><span id="handle" >${tweetObj.user.handle}</span></header>`;
@@ -57,12 +32,18 @@ $(document).ready(function() {
     });
   }
 
-  renderTweets(data);
-
   $('form').on('submit', function(event) {
     event.preventDefault();
     $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() });
   }); 
 
+  // loadtweets makes a GET request to receieve an array of tweets as JSON.
+
+  const loadtweets = function() {
+    $.ajax({method: 'get', url: '/tweets/'})
+    .then(renderTweets)
+    .catch()
+  }
+  loadtweets();
 
 })
