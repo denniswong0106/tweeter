@@ -19,6 +19,9 @@
   border: none;
   border-bottom: solid black;
   resize: none;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  font-size: 20px;
+}
+
+.negative {
+  color: red;
 }
