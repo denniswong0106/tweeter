@@ -1,8 +1,6 @@
 .new-tweet {
   display: flex;
   flex-flow: column;
-  align-items: space-between;
-  flex-grow: 1;
   width: 98%;
   border: solid purple;
   padding: 1em;
