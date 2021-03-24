@@ -47,8 +47,8 @@ $(document).ready(function() {
       <i class="fas fa-heart"></i>
     </span>
     </footer>`
-    const $tweet = $(`<article class="tweet">${tweetHeader}${tweetContent}${tweetFooter}</article>`);
-    return $tweet;
+    return $(`<article class="tweet">${tweetHeader}${tweetContent}${tweetFooter}</article>`);
+
   }
 
   const renderTweets = function(arrOfTweetObjs) {
