@@ -34,7 +34,20 @@ $(document).ready(function() {
 
   $('form').on('submit', function(event) {
     event.preventDefault();
-    $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() });
+    let $tweet = $(this).children('textarea').val();
+    if ($tweet.length > 140) {
+      alert('BAD ENTRY: YOU ARE ONLY ALLOWED 140 LETTERS');
+      return;
+    }
+    if (!$tweet) {
+      alert('HELLO?!? PUT SOME WORDS IN');
+      return;
+    }
+    if ($tweet) {
+      $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() });
+      return;
+    }
+
   }); 
 
   // loadtweets makes a GET request to receieve an array of tweets as JSON.
