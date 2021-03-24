@@ -6,9 +6,22 @@
   padding: 1em;
 }
 
+#handle {
+  visibility: hidden;
+}
+
+.tweet:hover {
+  box-shadow: 10px 10px;
+  text-shadow: 0.3px 0.3px;
+} 
+
+.tweet:hover #handle {
+  visibility: visible;
+  opacity: 50%;
+}
 
 .tweet header {
-  font-size: 80%;
+  font-size: 90%;
   height: 20px;
   background-color: inherit;
   display: flex;
@@ -28,6 +41,7 @@
   justify-content: space-between;
   align-items: center;
   border-top: solid black;
+  padding: 1%;
 }
 
 .tweet footer span {
