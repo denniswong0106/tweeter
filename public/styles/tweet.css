@@ -1,0 +1,36 @@
+.tweet {
+  width: 98%;
+  border: solid rgb(0, 0, 0);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 1em;
+}
+
+
+.tweet header {
+  font-size: 80%;
+  height: 20px;
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: dotted darkturquoise;
+}
+
+.tweet div {
+  margin-left: 1%;
+}
+
+.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid black;
+}
+
+.tweet footer span {
+  margin-left: 1em;
+  margin-right: 1em;
+}
