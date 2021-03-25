@@ -31,6 +31,13 @@ main .new-tweet {
   display: flex;
   justify-content: space-between;
   margin-top: 2%;
+  font-family: "Bungee", 'Source Sans Pro', "san-sarif";
+}
+
+.new-tweet-info .tweeter-name {
+  background-color: #4056A1;
+  border: none;
+  color: #FFFFFF;
 }
 
 #tweet-text {
@@ -45,3 +52,4 @@ main .new-tweet {
 .negative {
   color: red;
 }
+
