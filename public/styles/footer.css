@@ -1,0 +1,8 @@
+footer .scroll-top  {
+  bottom: 0px;
+  position: fixed;
+  margin: 1em;
+  bottom: 1em;
+  right: 1em;
+  display: none;
+}
