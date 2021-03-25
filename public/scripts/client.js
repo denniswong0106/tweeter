@@ -60,7 +60,8 @@ $(document).ready(function() {
     let $tweet = $(this).children('textarea').val();
 
     if ($tweet.length > 140) {
-      alert('BAD ENTRY: YOU ARE ONLY ALLOWED 140 LETTERS');
+      $('.error-message').text('error: too many words');
+      console.log('test')
       return;
     }
     if (!$tweet) {
