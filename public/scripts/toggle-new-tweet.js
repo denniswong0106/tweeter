@@ -1,10 +1,19 @@
 $(document).ready(function() {
   
+  // when 'Write new tweet' (top right) is clicked:
   $('.toggle-new-tweet').on('click', toggleNewTweet);
+  
+  // when user scrolls down where only tweets are visible, display the back to top
+  // button for user. 
   $(window).on('scroll', toggleScrollTop);
+
+  // When 'back to top' button is clicked:
+  $('.scroll-top').on('click', backToTop)
+
 });
 
 const toggleNewTweet = () => {
+
   $(".new-tweet").toggle(400);
   $('textarea').focus();
 }
@@ -27,4 +36,10 @@ const toggleScrollTop = function() {
     return;
   }
 
+};
+
+const backToTop = function() {
+  $(".new-tweet").toggle(true);
+  $('textarea').focus();
 }
+
