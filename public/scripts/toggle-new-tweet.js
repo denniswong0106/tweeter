@@ -5,6 +5,6 @@ $(document).ready(function() {
 });
 
 const toggleNewTweet = () => {
-
   $(".new-tweet").toggle(400);
+  $('textarea').focus();
 }
