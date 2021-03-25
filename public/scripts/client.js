@@ -6,13 +6,19 @@
 
 $(document).ready(function() {
 
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   // createTweetElement function - takes in tweet object, returns tweet article
   // containing entire html structure of the tweet
 
   const createTweetElement = function (tweetObj) {
 
     const tweetHeader = `<header><span><span class="user-avatar"><img src=${tweetObj.user.avatars}></span>${tweetObj.user.name}</span><span id="handle" >${tweetObj.user.handle}</span></header>`;
-    const tweetContent = `<div>${tweetObj.content.text}</div>`;
+    const tweetContentSafe = `<div>${escape(tweetObj.content.text)}</div>`;
     const tweetFooter = `<footer> 
     <span>${tweetObj.created_at}</span>
     <span> 
@@ -21,9 +27,11 @@ $(document).ready(function() {
       <i class="fas fa-heart"></i>
     </span>
     </footer>`
-    return $(`<article class="tweet">${tweetHeader}${tweetContent}${tweetFooter}</article>`);
+    return $(`<article class="tweet">${tweetHeader}${tweetContentSafe}${tweetFooter}</article>`);
 
   }
+
+
 
   const renderTweets = function(arrOfTweetObjs) {
     arrOfTweetObjs.forEach(tweetObj => {
@@ -38,7 +46,9 @@ $(document).ready(function() {
 
   $('form').on('submit', function(event) {
     event.preventDefault();
+
     let $tweet = $(this).children('textarea').val();
+
     if ($tweet.length > 140) {
       alert('BAD ENTRY: YOU ARE ONLY ALLOWED 140 LETTERS');
       return;
