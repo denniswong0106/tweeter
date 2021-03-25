@@ -1,4 +1,9 @@
-.error-message {
+.new-tweet .container {
+  display: flex;
+  justify-content: center;
+}
+
+.new-tweet .error-message {
   display: none;
   justify-content: center;
   color: red;

@@ -54,18 +54,21 @@ $(document).ready(function() {
   // initiates our actions when the "TWEET" button is pressed; we check for valid input
   // and if the input is valid, we store in database, then clear our tweets on page, 
   // then reload page with tweets udpated by database
+  
   $('form').on('submit', function(event) {
     event.preventDefault();
+    $('.error-message').slideUp(300);
 
     let $tweet = $(this).children('textarea').val();
 
     if ($tweet.length > 140) {
-      $('.error-message').text('error: too many words');
-      console.log('test')
+      $('.error-message').text('You put too many Letters!')
+      $('.error-message').slideDown( 600);
       return;
     }
     if (!$tweet) {
-      alert('HELLO?!? PUT SOME WORDS IN');
+      $('.error-message').text('HELLO?! Put some words in')
+      $('.error-message').slideDown( 600);
       return;
     }
     if ($tweet) {
