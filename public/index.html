@@ -29,7 +29,7 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="tweeter-name">tweeter</span>
       <span class="toggle-new-tweet">write a new tweet</span>
     </nav>
 
@@ -47,14 +47,13 @@
       <section class="new-tweet">
         <div class="container">
           <span class="error-message">
-
           </span>
         </div>
         <h4> What are you humming about?</h4>
         <form action="/tweets/" method="POST">
           <textarea name="text" id="tweet-text"></textarea>
           <div class="new-tweet-info">
-            <button type="submit">Tweet</button>
+            <button class="tweeter-name" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>

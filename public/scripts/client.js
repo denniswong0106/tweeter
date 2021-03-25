@@ -47,6 +47,7 @@ const clearTweets = function(value) {
 
 const clearTextArea = function(value) {
   $('textarea').val('');
+  $('.counter').val(140);
   return value;
 }
 

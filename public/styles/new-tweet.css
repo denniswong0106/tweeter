@@ -40,7 +40,6 @@ main .new-tweet {
   border: none;
   border-bottom: solid black;
   resize: none;
-  font-size: 20px;
 }
 
 .negative {
