@@ -1,19 +1,10 @@
 $(document).ready(function() {
   
-  $("textarea").on('input', wordCount);
+  $('.toggle-new-tweet').on('click', toggleNewTweet);
+
 });
 
-const wordCount = function() {
+const toggleNewTweet = () => {
 
-  let remainingLettersObj = $(this).siblings().find("output");
-  let wordsInTextBox = $(this).val().length;
-  remainingLettersObj.val(140 - wordsInTextBox);
-
-  if (remainingLettersObj.val() < 0) {
-    remainingLettersObj.addClass('negative');
-  }
-
-  if (remainingLettersObj.val() >= 0) {
-    remainingLettersObj.removeClass('negative');
-  }
+  $(".new-tweet").toggle(400);
 }
