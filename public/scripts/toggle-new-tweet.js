@@ -10,13 +10,21 @@ const toggleNewTweet = () => {
 }
 
 const toggleScrollTop = function() {
-  console.log('scrolltop:', $(this).scrollTop())
-  if ($(this).scrollTop() > 300) {
+
+  let scrollHeight = 400; //height of header section
+
+  // add height of new-tweet container, if newtweet is visible to user
+  if ($(".new-tweet").is(":visible")) {
+    scrollHeight += $(".new-tweet").innerHeight();
+  }
+
+  if ($(this).scrollTop() > scrollHeight) {
     $('.scroll-top').toggle(true);
     return;
   }
-  if ($(this).scrollTop() < 300) {
+  if ($(this).scrollTop() < scrollHeight) {
     $('.scroll-top').toggle(false);
+    return;
   }
 
 }
