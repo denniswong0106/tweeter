@@ -40,6 +40,7 @@ const toggleScrollTop = function() {
 
 const backToTop = function() {
   $(".new-tweet").toggle(true);
+  $('html, body').animate({scrollTop: '0px'}, 300);
   $('textarea').focus();
 }
 
