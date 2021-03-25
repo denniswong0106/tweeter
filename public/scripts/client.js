@@ -31,6 +31,10 @@ $(document).ready(function() {
 
     });
   }
+  const clearTweets = function(value) {
+    $('.tweet').remove();
+    return value;
+  }
 
   $('form').on('submit', function(event) {
     event.preventDefault();
@@ -44,8 +48,9 @@ $(document).ready(function() {
       return;
     }
     if ($tweet) {
-      $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() });
-      loadtweets();
+      $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() })
+      .then(clearTweets)
+      .then(loadtweets);
       return;
     }
 
