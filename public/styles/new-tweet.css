@@ -13,7 +13,6 @@
   display: none;
   flex-flow: column;
   width: 98%;
-  border: solid purple;
   padding: 1em;
 }
 
@@ -31,7 +30,6 @@
 
 .new-tweet-info .tweeter-name {
   background-color: #4056A1;
-  border: none;
   color: #FFFFFF;
 }
 
