@@ -66,8 +66,7 @@ const clearTextArea = function(value) {
 // loadtweets makes a GET request to receieve an array of tweets as JSON.
 const loadtweets = function() {
   $.ajax({method: 'get', url: '/tweets/'})
-  .then(renderTweets)
-  .catch()
+  .then(renderTweets);
 }
 
 // initiates our actions when the "TWEET" button is pressed; we check for valid input
@@ -77,18 +76,24 @@ const submitAndRecreateTweets = function (event) {
    
   event.preventDefault();
 
+  // function that display the error given, with small slidedown animation
+  const errorDisplay = (message) => {
+  
+    $('.error-message').text(message);
+    $('.error-message').slideDown(600);
+    $('textarea').focus();
+    }
+
   $('.error-message').slideUp(300, () => {
     let $tweet = $(this).children('textarea').val();
 
     if ($tweet.length > 140) {
-      $('.error-message').text('You put too many Letters!')
-      $('.error-message').slideDown(600);
+      errorDisplay('Too many letters!')
       return;
     }
 
     if (!$tweet) {
-      $('.error-message').text('HELLO?! Put some words in')
-      $('.error-message').slideDown(600);
+      errorDisplay('Please enter some letters!')
       return;
     }
 

@@ -10,12 +10,19 @@ $(document).ready(function() {
   // When 'back to top' button is clicked:
   $('.scroll-top').on('click', backToTop)
 
+  // when focus on textarea is lost, remove error message
+  $('textarea').blur(function() {
+    $('.error-message').slideUp(200);
+  })
+
 });
 
 const toggleNewTweet = () => {
 
-  $(".new-tweet").toggle(400);
-  $('textarea').focus();
+  $(".new-tweet").toggle(400, () => {
+    $('textarea').focus();
+  });
+  
 }
 
 const toggleScrollTop = function() {
@@ -42,5 +49,4 @@ const backToTop = function() {
   $(".new-tweet").toggle(true);
   $('html, body').animate({scrollTop: '0px'}, 300);
   $('textarea').focus();
-}
-
+};
