@@ -1,47 +1,16 @@
-// const moment = require('moment');
 // --------------------------------------------------------------//
 
 $(document).ready(function() {
+
   // Loads in database tweets once document is ready.
-  
   loadtweets();
-  
-  // initiates our actions when the "TWEET" button is pressed; we check for valid input
-  // and if the input is valid, we store in database, then clear our tweets on page, 
-  // then reload page with tweets udpated by database
 
-  $('form').on('submit', function(event) {
-    
-    event.preventDefault();
+  // Runs function to POST new tweet to db, and recreate the webpage with
+  // tweets, with the callback function
+  $('form').on('submit', submitAndRecreateTweets);
+})
 
-    $('.error-message').slideUp(300, () => {
-      let $tweet = $(this).children('textarea').val();
-
-      if ($tweet.length > 140) {
-        $('.error-message').text('You put too many Letters!')
-        $('.error-message').slideDown(600);
-        return;
-      }
-
-      if (!$tweet) {
-        $('.error-message').text('HELLO?! Put some words in')
-        $('.error-message').slideDown(600);
-        return;
-      }
-
-      if ($tweet) {
-        $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() })
-        .then(clearTweets)
-        .then(clearTextArea)
-        .then(loadtweets);
-        return;
-      }
-
-    })
-  })
-});
-
-// --------------------------------------//
+// -------------------------------------------------//
 
 // Functions //
 
@@ -101,6 +70,35 @@ const loadtweets = function() {
   .catch()
 }
 
-const submitAndRecreateTweets = function () {
-  
-}
+// initiates our actions when the "TWEET" button is pressed; we check for valid input
+// and if the input is valid, we store in database, then clear our tweets on page, 
+// then reload page with tweets udpated by database
+const submitAndRecreateTweets = function (event) {
+   
+  event.preventDefault();
+
+  $('.error-message').slideUp(300, () => {
+    let $tweet = $(this).children('textarea').val();
+
+    if ($tweet.length > 140) {
+      $('.error-message').text('You put too many Letters!')
+      $('.error-message').slideDown(600);
+      return;
+    }
+
+    if (!$tweet) {
+      $('.error-message').text('HELLO?! Put some words in')
+      $('.error-message').slideDown(600);
+      return;
+    }
+
+    if ($tweet) {
+      $.ajax({method: 'post', url: '/tweets/', data: $(this).serialize() })
+      .then(clearTweets)
+      .then(clearTextArea)
+      .then(loadtweets);
+      return;
+    }
+
+  })
+};
