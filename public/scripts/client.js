@@ -18,7 +18,7 @@ const createTweetElement = function (tweetObj) {
   const tweetContent = `<div>${escape(tweetObj.content.text)}</div>`;
   const tweetFooter = `<footer>
     <span>${tweetObj.created_at}</span>
-    <span>
+    <span class=icons>
       <i class="fas fa-flag"></i>
       <i class="fas fa-retweet"></i>
       <i class="fas fa-heart"></i>

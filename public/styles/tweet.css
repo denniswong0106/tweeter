@@ -18,15 +18,24 @@
   visibility: hidden;
 }
 
+.tweet:hover #handle {
+  visibility: visible;
+  opacity: 50%;
+}
+
+.tweet footer .icons {
+  visibility: hidden;
+}
+
+.tweet:hover .icons {
+  visibility: visible;
+}
+
 .tweet:hover {
   box-shadow: 10px 10px;
   text-shadow: 0.3px 0.3px;
 } 
 
-.tweet:hover #handle {
-  visibility: visible;
-  opacity: 50%;
-}
 
 .tweet header {
   font-size: 90%;
