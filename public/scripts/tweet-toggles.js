@@ -20,7 +20,7 @@ $(document).ready(function() {
 // Function toggles whether the newtweet area is visible to user
 const toggleNewTweet = () => {
 
-  $(".new-tweet").toggle(400, () => {
+  $(".new-tweet").toggle(200, () => {
     $('textarea').focus();
   });
   
