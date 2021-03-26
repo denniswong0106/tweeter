@@ -25,6 +25,7 @@ const toggleNewTweet = () => {
   });
   
 };
+
 // Function toggles whether the 'back to top' button is visible
 // button is only visible when user has scrolled down, and is viewing only tweets
 // (ie.they cannot see their user profile or the new tweet area)
@@ -32,7 +33,7 @@ const toggleScrollTopButton = function() {
 
   let scrollHeight = 400; //height of header section
 
-  // add height of new-tweet container, if newtweet is visible to user
+  // adds the height of new-tweet container, if newtweet section is visible to user
   if ($(".new-tweet").is(":visible")) {
     scrollHeight += $(".new-tweet").innerHeight();
   }

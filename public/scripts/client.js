@@ -69,6 +69,14 @@ const loadtweets = function() {
     .then(renderTweets);
 };
 
+// function that display the error given, with small slidedown animation
+const errorDisplay = (message) => {
+
+  $('.error-message').text(message);
+  $('.error-message').slideDown(600);
+  $('textarea').focus();
+};
+
 // initiates our actions when the "TWEET" button is pressed; we check for valid input
 // and if the input is valid, we store in database, then clear our tweets on page,
 // then reload page with tweets udpated by database
@@ -76,13 +84,7 @@ const submitAndRecreateTweets = function(event) {
    
   event.preventDefault();
 
-  // function that display the error given, with small slidedown animation
-  const errorDisplay = (message) => {
-  
-    $('.error-message').text(message);
-    $('.error-message').slideDown(600);
-    $('textarea').focus();
-  };
+
 
   $('.error-message').slideUp(300, () => {
     let $tweet = $(this).children('textarea').val();
