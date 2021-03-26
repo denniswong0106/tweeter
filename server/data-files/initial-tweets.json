@@ -8,7 +8,7 @@
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1616560477363
+    "created_at": 1616135191455
   },
   {
     "user": {
@@ -19,6 +19,62 @@
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1616646877363
+    "created_at": 1616221591455
+  },
+
+  {
+    "user": {
+      "name": "Carolyn Vos",
+      "handle": "@MissVos",
+      "avatars": "https://i.imgur.com/nlhLi3I.png"
+    },
+    "content": {
+      "text": "Did you see that ludicrous display? What was Wenger thinking sending Walcott on that early?"
+    },
+    "created_at": 1616307991455
+  },
+  {
+    "user": {
+      "name": "Isaac Lazzerini",
+      "handle": "@Lazzerini39",
+      "avatars": "https://i.imgur.com/ilT4JDe.png"
+    },
+    "content": {
+      "text": "Did you try turning it off and on again?"
+    },
+    "created_at": 1616394391455
+  },
+  {
+    "user": {
+      "name": "Bruce Jensen",
+      "handle": "@DrJensen29",
+      "avatars": "https://i.imgur.com/5fUVPRP.png"
+    },
+    "content": {
+      "text": "Nah, I contain multitudes yo"
+    },
+    "created_at": 1616480791455
+  },
+  {
+    "user": {
+      "name": "Francis Becucci",
+      "handle": "@Becucci86",
+      "avatars": "https://i.imgur.com/ilT4JDe.png"
+    },
+    "content": {
+      "text": "There's always money in the banana stand."
+    },
+    "created_at": 1616567191455
+  },
+  {
+    "user": {
+      "name": "Phoebe Pieroni",
+      "handle": "@Pieroni16",
+      "avatars": "https://i.imgur.com/3GvwNBf.png"
+    },
+    "content": {
+      "text": "Has anyone heard of twitter? #NextBigThing"
+    },
+    "created_at": 1616653591455
   }
 ]

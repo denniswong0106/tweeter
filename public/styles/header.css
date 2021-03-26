@@ -10,7 +10,7 @@ Feel free to use this tool to assist: https://www.transparenttextures.com/
 */
 
 #main-header {
-  background-color: #bf3939 ;
+  background-color: #c5946b;
   background-image: url("/images/brick-wall.png");
   height: 400px;
   padding: 1.5em;
@@ -20,3 +20,6 @@ Feel free to use this tool to assist: https://www.transparenttextures.com/
   flex-flow: column;
 }
 
+#main-header img {
+  width: 15rem;
+}
