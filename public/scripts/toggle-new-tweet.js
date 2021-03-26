@@ -4,28 +4,31 @@ $(document).ready(function() {
   $('.toggle-new-tweet').on('click', toggleNewTweet);
   
   // when user scrolls down where only tweets are visible, display the back to top
-  // button for user. 
-  $(window).on('scroll', toggleScrollTop);
+  // button for user.
+  $(window).on('scroll', toggleScrollTopButton);
 
   // When 'back to top' button is clicked:
-  $('.scroll-top').on('click', backToTop)
+  $('.scroll-top').on('click', backToTop);
 
   // when focus on textarea is lost, remove error message
   $('textarea').blur(function() {
     $('.error-message').slideUp(200);
-  })
+  });
 
 });
 
+// Function toggles whether the newtweet area is visible to user
 const toggleNewTweet = () => {
 
   $(".new-tweet").toggle(400, () => {
     $('textarea').focus();
   });
   
-}
-
-const toggleScrollTop = function() {
+};
+// Function toggles whether the 'back to top' button is visible
+// button is only visible when user has scrolled down, and is viewing only tweets
+// (ie.they cannot see their user profile or the new tweet area)
+const toggleScrollTopButton = function() {
 
   let scrollHeight = 400; //height of header section
 
@@ -45,6 +48,8 @@ const toggleScrollTop = function() {
 
 };
 
+// Function that takes user back to top, makes newtweet area visible and puts focus on
+// the textarea for newtweet
 const backToTop = function() {
   $(".new-tweet").toggle(true);
   $('html, body').animate({scrollTop: '0px'}, 300);

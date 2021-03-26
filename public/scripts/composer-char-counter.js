@@ -16,4 +16,4 @@ const wordCount = function() {
   if (remainingLettersObj.val() >= 0) {
     remainingLettersObj.removeClass('negative');
   }
-}
+};
