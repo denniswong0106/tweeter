@@ -7,11 +7,12 @@ This project was created with guidance by Lighthouse Labs.
 ## Final Product
 
 This is the page when loaded in:
+
 !["Screenshot of tweet page on load"](https://github.com/denniswong0106/tweeter/blob/master/docs/scroll-through.gif)
 
-As you can see, we can immediately start browsing the tweets on the page. Note the word counter going red when the text goes beyond 140 letters.
+As you can see, we can immediately start browsing the tweets on the page.
 
-Let's try writing a Tweet:
+Let's try writing a Tweet. Note the word counter going red when the input text goes beyond 140 letters.
 
 !["Screenshot of invalid tweet"](https://github.com/denniswong0106/tweeter/blob/master/docs/invalid-entry.gif)
 
